@@ -29,3 +29,5 @@ In this session, we'll add a "sequencer" and a "monitor" to our testbench.
 The role of the sequencer is to generate data packets, and send it to the DUT.
 The role of the monitor is to monitor the DUT output
 
+Note:
+  https://www.chipverify.com/uvm/sequencer-and-monitor

@@ -58,6 +58,11 @@ package my_pkg;
          `uvm_field_int (data, UVM_ALL_ON)
          `uvm_field_int (addr, UVM_ALL_ON)
       `uvm_object_utils_end
+
+      // work around " Number of actuals and formals does not match in function call." of questasim
+      function new(string name="my_data");
+         super.new(name);
+      endfunction : new 
       
    endclass   
 
