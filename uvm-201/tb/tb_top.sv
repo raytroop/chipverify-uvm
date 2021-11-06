@@ -29,7 +29,7 @@ module top;
 // be run for simulation
 //-----------------------------------------------------------------------------
    initial begin
-      uvm_config_db #(virtual dut_if)::set (null, "uvm_test_top", "dut_if", dut_if1);
+      uvm_config_db #(virtual dut_if)::set (null, "uvm_test_top", "vif", dut_if1);
       run_test ("base_test");
    end
 

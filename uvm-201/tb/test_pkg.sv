@@ -25,7 +25,7 @@ package test_pkg;
          m_top_env  = my_env::type_id::create ("m_top_env", this);
       
          // Get DUT interface from top module
-         if (! uvm_config_db #(virtual dut_if) :: get (this, "", "dut_if", vif)) begin
+         if (! uvm_config_db #(virtual dut_if) :: get (this, "", "vif", vif)) begin
             `uvm_error (get_type_name (), "DUT Interface not found !")
          end
 

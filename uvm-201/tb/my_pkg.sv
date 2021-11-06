@@ -76,23 +76,25 @@ package my_pkg;
 
       task reset_phase (uvm_phase phase);
          super.reset_phase (phase);
+         phase.raise_objection(this);
          `uvm_info (get_type_name (), $sformatf ("Applying initial reset"), UVM_MEDIUM)
          this.vif.rstn = 0;
          repeat (20) @ (posedge vif.clk);
          this.vif.rstn = 1;
          `uvm_info (get_type_name (), $sformatf ("DUT is now out of reset"), UVM_MEDIUM)
+         phase.drop_objection(this);
       endtask
 
       task main_phase (uvm_phase phase);
          super.main_phase (phase);
-         phase.raise_objection (phase);
+         phase.raise_objection (this);
          `uvm_info (get_type_name (), $sformatf ("Inside Main phase"), UVM_MEDIUM)
 
          // Let's create a data object, randomize it and send it to the DUT
          n_times = 5;
          repeat (n_times) begin
             `uvm_info (get_type_name (), $sformatf ("Generate and randomize data packet"), UVM_DEBUG)
-            data_obj = my_data::type_id::create ("data_obj", this);
+            data_obj = my_data::type_id::create ("data_obj");
             assert(data_obj.randomize ());
             @(posedge vif.clk);
             `uvm_info (get_type_name (), $sformatf ("Drive data packet to DUT"), UVM_DEBUG)
@@ -102,7 +104,9 @@ package my_pkg;
             this.vif.wdata = data_obj.data;
             data_obj.display ();
          end
-         phase.drop_objection (phase);
+         // a hack to show the last packet in waveform
+         @(posedge vif.clk);
+         phase.drop_objection (this);
       endtask
 
       task shutdown_phase (uvm_phase phase);
