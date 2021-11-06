@@ -60,6 +60,10 @@ package my_pkg;
          `uvm_field_int (addr, UVM_ALL_ON)
       `uvm_object_utils_end
       
+      function new (string name="my_data");
+         super.new (name);
+      endfunction : new
+
    endclass   
 
    //---------------------------------------------------------------------------------------------------------------------
