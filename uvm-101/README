@@ -1,0 +1,8 @@
+Class hierarchy was discussed in the previous session. 
+Now, let's try to construct a testbench that will print out "Hello UVM". 
+We'll keep the testbench simple with only two main components
+  - Test
+  - Environment
+
+Note:
+  https://www.chipverify.com/uvm/uvm-hello-world
