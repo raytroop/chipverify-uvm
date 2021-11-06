@@ -141,6 +141,7 @@ package my_pkg;
       endfunction
 
       task main_phase (uvm_phase phase);
+         // fork, join_none is NOT necessary 
          fork 
             collect_transaction ();
          join_none
