@@ -41,7 +41,12 @@ package my_pkg;
       rand bit [7:0]   addr;
 
       constraint c_addr { addr > 0; addr < 8;}
-      
+
+      //  add constructor function to avoid "Number of actuals and formals does not match in function call." for questasim
+      function new(string name="my_data");
+         super.new(name);
+      endfunction : new
+
       virtual function void display ();
          `uvm_info (get_type_name (), $sformatf ("addr = 0x%0h, data = 0x%0h", addr, data), UVM_MEDIUM);
       endfunction
