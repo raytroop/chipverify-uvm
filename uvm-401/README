@@ -23,3 +23,6 @@ handle inside a configuration object, and pass the configuration object to the
 agent. The cfg object can have many other types of configuration parameters as
 well in addition to holding the interface handle. Basically, it should contain
 everything needed for an agent to configure itself and its sub-components.
+
+Note:
+  https://www.chipverify.com/uvm/agent-and-scoreboard
