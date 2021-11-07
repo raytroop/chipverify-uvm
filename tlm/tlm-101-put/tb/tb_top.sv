@@ -8,6 +8,7 @@
 
 module tb_top;
    import uvm_pkg::*;
+   import test_pkg::*;
    
 //-----------------------------------------------------------------------------
 // At start of simulation, set the interface handle as a config object in UVM 

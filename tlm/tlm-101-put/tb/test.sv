@@ -1,3 +1,7 @@
+package test_pkg;
+
+import uvm_pkg::*;
+import tlm_pkg::*;
 `include "uvm_macros.svh"
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -35,3 +39,5 @@ class base_test extends uvm_test;
    endfunction
 
 endclass 
+
+endpackage

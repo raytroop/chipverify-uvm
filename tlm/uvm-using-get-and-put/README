@@ -1,0 +1,7 @@
+Note:
+  https://www.chipverify.com/uvm/driver-using-get-and-put
+
+testbench.sv
+  get -> put -> get_response
+testbench_1.sv  
+  get -> put; use `set_drain_time` sync test

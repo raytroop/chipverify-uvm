@@ -5,6 +5,7 @@
 // Email          :  info@chipverify.com
 // Description    :  An example of TLM and how modules are connected  
 //-----------------------------------------------------------------------------
+package tlm_pkg;
 
 `include "uvm_macros.svh"
 
@@ -28,6 +29,10 @@ class simple_packet extends uvm_object;
 
 	constraint c_addr { addr > 8'h2a; }
 	constraint c_data { data inside {[8'h14:8'he9]}; }
+
+   function new(string name="simple_packet");
+      super.new(name);
+   endfunction : new
 	
 endclass
 
@@ -119,3 +124,4 @@ class my_env extends uvm_env;
 endclass
 
 //-----------------------------------------------------------------------------
+endpackage
