@@ -10,6 +10,8 @@ package my_pkg;
    // If you don't use this, it'll complain that it doesn't recognize uvm components
    import uvm_pkg::*;
 
+   // forward declaration
+   // https://stackoverflow.com/a/52378250/8037585
    typedef class my_driver;               
    typedef class my_monitor;
    typedef class my_data;
